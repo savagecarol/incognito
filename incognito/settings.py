@@ -22,9 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "9&yq2bt56ju8q#4ev_^=0lrj)8t)z2cm$()9clf+roy^(fyj&d"
 
-DEBUG = bool(os.environ.get('DEBUG'))
+DEBUG = True
 
 ALLOWED_HOSTS = ['incognito-ninja.herokuapp.com', 'localhost']
 

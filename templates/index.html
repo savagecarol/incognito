@@ -16,7 +16,7 @@
 
 </head>
 
-<body onscroll="changeBackground()">
+<body onscroll="changeBackground()" id="body">
 
         <div class="header" id="header">
             <div class="row">
@@ -27,9 +27,9 @@
                         <span class="app-name">Incognito</span>
                     </div>
                     <div class="quick-links-mobile" id="quick-links-mobile" style="display: none;">
-                        <a href="">Home</a></br>
-                        <a href="">About</a></br>
-                        <a href="">Preview</a></br>
+                        <a href="#body">Home</a></br>
+                        <a data-toggle="modal" data-target="#exampleModal">About</a></br>
+                        <a href="#preview">Preview</a></br>
                     </div>
                 </div>
                 <div class="col-4">
@@ -41,9 +41,9 @@
                 <div class="col-4 quick-links">
                    
                     <ul class="">
-                        <ol>Home</ol>
-                        <ol>About</ol>
-                        <ol>Preview</ol>
+                        <ol ><a href="#body">Home</a></ol>
+                        <ol data-toggle="modal" data-target="#exampleModal">About Us</ol>
+                        <ol ><a href="#preview">Preview</a></ol>
                     </ul>
                    
                 </div>
@@ -89,7 +89,7 @@
             </div>    
         </div>
 
-        <div class="container-fluid" style="height:120vh; padding-top: 40vh; width: 100%;background-color: #2cb9c3;">
+        <div class="container-fluid" style="height:120vh; padding-top: 40vh; width: 100%;background-color: #2cb9c3;" id="preview">
 
             <div class="row">
                 <div class="col-md-1"></div>
@@ -104,8 +104,13 @@
                             <img id="YesVerified" src="/static/images/tenor-unscreen.gif" width="100vw" height="100vw" style="margin-left: 10vw;display:none;" alt="">
                             <img id="NoNotVerified" src="/static/images/Error.gif" width="100vw" height="100vw" style="margin-left: 10vw;display:none;" alt="">
                             <div style="display: inline-block;"><div id="none"></br></br></div>
+<<<<<<< Updated upstream
                                 <button type="submit" class="btn btn-dark" style="margin-right: 2vw;margin-left: 2vw;" onclick="showImage()">Upload Images</button>
                                 <button type="submit" class="btn btn-dark" onclick="showText()">Upload Text</button>
+=======
+                                <button type="submit" class="btn btn-primary" style="margin-right: 2vw;margin-left: 2vw;background-color: black;" onclick="showImage()">Upload Images</button>
+                                <button type="submit" class="btn btn-primary" style="background-color: black;" onclick="showText()" >Upload Text</button>
+>>>>>>> Stashed changes
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -113,7 +118,11 @@
                                 <div class="form-group" id="textUpload">
                                     <label for="textarea">Paste the Terms And Conditions Here</label>
                                     <textarea class="form-control" name="content" id="textinput" style="width: 50vw;height: 20vw;"></textarea>
+<<<<<<< Updated upstream
                                     <span  class="btn btn-dark" onclick="analyzeText()">Analyze</span>
+=======
+                                    <span  class="btn btn-primary" style="background-color: black;" onclick="analyzeText()">Analyze</span>
+>>>>>>> Stashed changes
                             
                                 </div>
                                 
@@ -125,7 +134,11 @@
                                         </div>
                                     </section>
                                     <input type="file" id="imageLoader"></br>
+<<<<<<< Updated upstream
                                     <span type="submit" class="btn btn-dark" onclick="analyzeImage()">Analyze</span>
+=======
+                                    <span type="submit" class="btn btn-primary" style="background-color: black;" onclick="analyzeImage()">Analyze</span>
+>>>>>>> Stashed changes
                                                                         
                                 </div>
                             
@@ -138,7 +151,7 @@
                                 <span id="result-text" class="main-head">
                                     Too Busy To Read </br> The Terms And Conditions...
                                 </span></br></br>
-                                <span type="submit" class="btn btn-primary dark" onclick="window.location.reload()">Refresh</span>
+                                <span type="submit" class="btn btn-primary dark" style="background-color: black;" onclick="window.location.reload()">Refresh</span>
                                     
                             </div>
                             

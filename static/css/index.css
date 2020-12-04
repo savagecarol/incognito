@@ -5,6 +5,10 @@ html{
     overflow-x: hidden; 
     background-attachment: fixed; 
 }
+a{
+    all: unset;
+    color: black;
+}
 html * {
     background-color: transparent;
     font-family: 'Montserrat', sans-serif;
@@ -17,6 +21,10 @@ html * {
     margin-top: -20vh;
     z-index: 99999;
     
+}
+.header a{
+    all: unset;
+    color: black;
 }
 .quick-links{
     padding: 1vw;

@@ -197,23 +197,13 @@ stopwords = ['to',
 def index(request):
     if request.method == 'POST':
         content = request.POST.get('content')
-        check(content)
+        check2(content)
     return render(request, 'index.html')
 
 
 def remove_stopwords(text, stopwords):
     useful = [w for w in text if w not in stopwords]
     return useful
-
-
-def formatting(document):
-    document = document.lower()
-    words = tokenizer.tokenize(document)
-    useful_words = remove_stopwords(words, stopwords)
-    stemmed_words = [ps.stem(token) for token in useful_words]
-    clean_doc = ' '.join(stemmed_words)
-    print(clean_doc)
-    # return cv.transform()
 
 
 def getDoc(document):
@@ -243,7 +233,7 @@ def getStem(review):
     return clean_review
 
 
-def check(content):
+def check1(content):
     df = pd.read_csv('test.csv')
     data = df.to_numpy()
     Y = data[:, 2]
@@ -255,6 +245,21 @@ def check(content):
         else:
             y.append("Yes")
 
+    stemmed_doc = getDoc(X)
+    cv = CountVectorizer()
+    vc = cv.fit_transform(stemmed_doc)
+    X = vc.toarray()
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
+    model.fit(X_train, y_train)
+    y_pred = model.predict(cv.transform(getDoc([content])))
+    print(y_pred)
+
+
+def check2(content):
+    df = pd.read_csv('test.csv')
+    data = df.to_numpy()
+    y = data[:, 1]
+    X = data[:, 0]
     stemmed_doc = getDoc(X)
     cv = CountVectorizer()
     vc = cv.fit_transform(stemmed_doc)

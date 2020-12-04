@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
     <script src="/static/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="col-6">
                     <span id="main-head" class="main-head">
-                        Let Icognito Do </br> The Hardwork...
+                        Let Incognito Do </br> The Hardwork...
                     </span>
                 </div>
             </div>    
@@ -83,7 +83,7 @@
                 </div>
                 <div class="col-6">
                     <span id="main-head" class="main-head">
-                        Let Icognito Do </br> The Hardwork...
+                        Let Incognito Do </br> The Hardwork...
                     </span>
                 </div>
             </div>    
@@ -96,62 +96,56 @@
                 <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-4">
-                            <h2>Ingonito Text Analyzer</h2>
-                            <span>
+                            <h2>Incogonito Text Analyzer</h2>
+                            <span></br>
                                 We Use Machine Learning Algorithms With Our Own Dataset. 
                             </span>
-                            <div class="loader" id="loader" style="display: none;"></div>
-                            <div style="display: inline-block;">
+                            <div class="loader" id="loader" style="display: none;"></div></br>
+                            <img id="YesVerified" src="/static/images/tenor-unscreen.gif" width="100vw" height="100vw" style="margin-left: 10vw;display:none;" alt="">
+                            <img id="NoNotVerified" src="/static/images/Error.gif" width="100vw" height="100vw" style="margin-left: 10vw;display:none;" alt="">
+                            <div style="display: inline-block;"><div id="none"></br></br></div>
                                 <button type="submit" class="btn btn-primary" style="margin-right: 2vw;margin-left: 2vw;" onclick="showImage()">Upload Images</button>
                                 <button type="submit" class="btn btn-primary" onclick="showText()">Upload Text</button>
                             </div>
                         </div>
                         <div class="col-md-8">
 
-                            <form method="POST" id="textUpload" style=""> 
-                                {% csrf_token %}
-                                <div class="form-group">
+                                <div class="form-group" id="textUpload">
                                     <label for="textarea">Paste the Terms And Conditions Here</label>
-                                    <textarea class="form-control" name="content" id="textarea" style="width: 50vw;height: 20vw;"></textarea>
-                                    <input type="hidden" name="image_content" id="image_content">
+                                    <textarea class="form-control" name="content" id="textinput" style="width: 50vw;height: 20vw;"></textarea>
+                                    <span  class="btn btn-primary" onclick="analyzeText()">Analyze</span>
+                            
                                 </div>
-                                <button type="submit" class="btn btn-primary">Analyze</button>
-                            </form>
-                            <form method="POST" id="imageUpload"  style="display: none;">
-                                {% csrf_token %}
-                                <div class="form-group"> 
+                                
+                                <div class="form-group" id="imageUpload" style="display:none;">  
                                     <span id="check">Select All The Images With have Terms And Conditions</span>
                                     <section>
                                         <div style="background-color: white;width: 50vw;height: 20vw;border-radius: 3px;">
                                             <img src="" alt="" id="previewText" style="width: 50vw;height: 20vw;border-radius: 3px;">
                                         </div>
                                     </section>
-                                    <input type="file" id="imageLoader">
-                                    
+                                    <input type="file" id="imageLoader"></br>
+                                    <span type="submit" class="btn btn-primary" onclick="analyzeImage()">Analyze</span>
+                                                                        
                                 </div>
-                                <span type="submit" class="btn btn-primary" onclick="analyzeImage()">Analyze</span>
+                            
+                            <form method="POST" id="textUpload" style="display: none;"> 
+                                {% csrf_token %}
+                                <input type="hidden" name="image_content" id="image_content">
                             </form>
 
-                            <!-- <form method="POST" id="takePicture"  style="">
-                                {% csrf_token %}
-                                <div class="form-group"> 
-                                    <span id="check">Select All The Images With have Terms And Conditions</span>
-                                    <section>
-                                        <div style="background-color: white;width: 50vw;height: 20vw;border-radius: 3px;">
-                                            <img src="" alt="" id="previewText" style="width: 50vw;height: 20vw;border-radius: 3px;">
-                                        </div>
-                                    </section>
-                                    <input type="file" id="imageLoader">
+                            <div class="form-group" id="Result" style="display: none;">
+                                <span id="result-text" class="main-head">
+                                    Too Busy To Read </br> The Terms And Conditions...
+                                </span></br></br>
+                                <span type="submit" class="btn btn-primary dark" onclick="window.location.reload()">Refresh</span>
                                     
-                                </div>
-                                <span type="submit" class="btn btn-primary" onclick="analyzeImage()">Analyze</spamn>
-                            </form> -->
+                            </div>
+                            
+
                         </div>
                     </div>
-                    <div>
-                        {{ result}}
-                    </div>
-                    
+                   
                 </div>
                 <div class="col-md-1"></div>
             </div>

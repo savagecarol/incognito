@@ -106,6 +106,17 @@ a, a:hover {
    
 }
 
+.loader-still{
+    border: 30px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 30px solid blue;
+    border-right: 30px solid green;
+    border-bottom: 30px solid red;
+    width: 8vw;
+    height: 8vw;
+    margin: 2vw;
+    margin-left: 7vw;
+}
 
 /* Loader */
 .loader {

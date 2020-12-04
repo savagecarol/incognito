@@ -8,8 +8,14 @@ from services.globals import *
 
 def index(request):
     if request.method == 'POST':
-        content = request.POST.get('content')
-        check2(content)
+        if request.POST.get('content'):
+            content = request.POST.get('content')
+            result = check2(content)
+            return render(request, 'result.html', {'result':result})
+        elif request.POST.get('image_content'):
+            content = request.POST.get('image_content')
+            result = check2(content)
+            return render(request, 'result.html', {'result':result})
     return render(request, 'index.html')
 
 
@@ -65,6 +71,7 @@ def check1(content):
     model.fit(X_train, y_train)
     y_pred = model.predict(cv.transform(getDoc([content])))
     print(y_pred)
+    return y_pred
 
 
 def check2(content):
@@ -80,3 +87,4 @@ def check2(content):
     model.fit(X_train, y_train)
     y_pred = model.predict(cv.transform(getDoc([content])))
     print(y_pred)
+    return y_pred

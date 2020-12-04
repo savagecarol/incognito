@@ -113,6 +113,7 @@
                                 <div class="form-group">
                                     <label for="textarea">Paste the Terms And Conditions Here</label>
                                     <textarea class="form-control" name="content" id="textarea" style="width: 50vw;height: 20vw;"></textarea>
+                                    <input type="hidden" name="image_content" id="image_content">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Analyze</button>
                             </form>
@@ -147,7 +148,9 @@
                             </form> -->
                         </div>
                     </div>
-
+                    <div>
+                        {{ result}}
+                    </div>
                     
                 </div>
                 <div class="col-md-1"></div>

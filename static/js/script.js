@@ -31,7 +31,7 @@ function analyzeImage(){
     
             alert(result.text)    
             document.getElementById("loader").style.display = "none"
-
+            document.getElementById("image_content").value = result.text;
 
         })
     }

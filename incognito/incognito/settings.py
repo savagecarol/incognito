@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'incognito.urls'
+ROOT_URLCONF = 'incognito.incognito.urls'
 
 TEMPLATES = [
     {

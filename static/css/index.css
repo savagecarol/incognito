@@ -1,5 +1,5 @@
 html{
-    background-image: url('/static/images/background.jpg'); 
+    background-image: url('/static/images/background.jpg');
     background-repeat: no-repeat;
     background-size: 100vw 100vh;      
     overflow-x: hidden; 
@@ -7,10 +7,16 @@ html{
 }
 html * {
     background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
 }
 .header{
+    width: 100vw;
+    position: fixed;
     height: 20vh;
-    padding: 4vh;
+    padding: 1vh;
+    margin-top: -20vh;
+    z-index: 99999;
+    
 }
 .quick-links{
     padding: 1vw;
@@ -68,7 +74,6 @@ html * {
 .footer {
     /*background-color: #2cb9c3;*/
     height: 3vw;
-    margin-bottom: -6vh;
 }
 
 .footer-text {
@@ -88,10 +93,47 @@ a, a:hover {
 .main{
     margin: 2vw;
     padding: 4vw;
+    height: 80vh;
+    margin-top: 20vh;
+    padding-top: 20vh;
 }
 .mobile{
     display: none;
 }
+.main-mobile{
+    height: 100vh;
+    padding-top: 40vh;
+   
+}
+
+
+/* Loader */
+.loader {
+    border: 30px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 30px solid blue;
+    border-right: 30px solid green;
+    border-bottom: 30px solid red;
+    width: 10vw;
+    height: 10vw;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 2vw;
+    margin-left: 7vw;
+  }
+  
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+/* Loader */
 @media only screen and (max-width: 700px) {
     .desktop{
         display: none;
@@ -109,5 +151,8 @@ a, a:hover {
     }
     .menu{
         display: inline-block;
+    }
+    .header{
+        margin-top: 0vh;
     }
   }

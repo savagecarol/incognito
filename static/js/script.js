@@ -3,7 +3,45 @@ function startLoad(){
     console.log(body)
 }
 
+function showImage(){
+    document.getElementById("textUpload").style.display = "none"
+    document.getElementById("imageUpload").style.display = "" 
+}
 
+function showText(){
+    document.getElementById("textUpload").style.display = ""
+    document.getElementById("imageUpload").style.display = "none" 
+}
+
+
+function changeBackground(){
+    document.getElementById("header").style.backgroundColor = "#2cb9c3";
+    document.getElementById("header").style.boxShadow = "0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1)"
+}
+
+function analyzeImage(){
+    document.getElementById("loader").style.display = ""
+    imageLoader = document.getElementById("imageLoader")
+    const reader = new FileReader()
+    reader.readAsDataURL(imageLoader.files[0])
+    reader.onload = function() {
+        console.log(reader.result)
+        document.getElementById("previewText").src = reader.result
+        Tesseract.recognize(reader.result).then(function (result){ 
+    
+            alert(result.text)    
+            document.getElementById("loader").style.display = "none"
+
+
+        })
+    }
+
+    reader.onerror = function() {
+        console.log(reader.error);
+    };
+    
+
+}
 
 function myFunction(x) {
     x.classList.toggle("change");
@@ -78,14 +116,7 @@ function applyColorArray(element,delay){
     }, delay);
 }
 
-var textExtracted = ""
 
-function ImageReader(file){
-
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    textExtracted = reader.result
-}
 
 var text = ""
     

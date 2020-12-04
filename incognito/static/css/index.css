@@ -1,7 +1,13 @@
+html{
+    background-color: #2cb9c3; 
+}
 .header{
-    background-color: purple;
+    background-color: #2cb9c3;
     height: 20vh;
     padding: 4vh;
+}
+.quick-links{
+    padding: 1vw;
 }
 .quick-links ul{
     display: flex;
@@ -54,8 +60,8 @@
 }
 
 .footer {
-    background-color: purple;
-    height: 30%
+    background-color: #2cb9c3;
+    height: 3vw;
 }
 
 .footer-text {
@@ -67,7 +73,14 @@ a, a:hover {
 }
 
 
+.main-head{
+    font-size: xx-large;
+}
 
+.main{
+    margin: 2vw;
+    padding: 4vw;
+}
 
 
 @media only screen and (max-width: 700px) {

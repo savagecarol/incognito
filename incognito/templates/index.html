@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: #2cb9c3">
 
 <head>
     <title>Ninja Hattori</title>
@@ -11,20 +11,24 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
 </head>
 
 <body>
 
-    <div class="header" id="header">
-        <div class="row">
-            <div class="col-2">
-                <img class="img-icon" src="/static/images/icon.png" alt="" style="">
-                </br>
-                <span class="app-name">Incognito</span>
-                <div class="quick-links-mobile" id="quick-links-mobile" style="display: none;">
-                    <a href="">Home</a></br>
-                    <a href="">About</a></br>
-                    <a href="">Preview</a></br>
+        <div class="header" id="header">
+            <div class="row">
+                <div class="col-2">
+                    <div style="padding: 1vw;"> 
+                        <img class="img-icon" src="/static/images/icon.png" alt="" style="">
+                        </br>
+                        <span class="app-name">Incognito</span>
+                    </div>
+                    <div class="quick-links-mobile" id="quick-links-mobile" style="display: none;">
+                        <a href="">Home</a></br>
+                        <a href="">About</a></br>
+                        <a href="">Preview</a></br>
+                    </div>
                 </div>
             </div>
             <div class="col-4">
@@ -131,18 +135,97 @@
                 <div class="modal-footer"></div>
             </div>
         </div>
-    </div>
+
+
+
+        <div class="main">
+            <div class="row">
+                <div class="col-6">
+                    <span id="main-head" class="main-head">
+                        Too Busy To Read </br> The Terms And Conditions...
+                    </span>
+                </div>
+                <div class="col-6">
+                    <span id="main-head" class="main-head">
+                        Let Icognito Do </br> The Hardwork...
+                    </span>
+                </div>
+            </div>    
+        </div>
+
+
+        <input type="file" id="imageLoader" name="imageLoader"/>
+        <canvas id="imageCanvas"></canvas>
+    
+      <!-- Team Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Team Ninja Hattori</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row" id="card-conatainer">
+                            <div class="col-md-4" id="card">
+                                <div class="card" style="width: 14rem;">
+                                    <img src="/static/images/logo.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Alankar Saxena</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="#" class="card-link">Card link</a>
+                                        <a href="#" class="card-link">Another link</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4" id="card">
+                                <div class="card" style="width: 14rem;">
+                                    <img src="/static/images/logo.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Kartikeya Sharma</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="#" class="card-link">Card link</a>
+                                        <a href="#" class="card-link">Another link</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4" id="card">
+                                <div class="card" style="width: 14rem;">
+                                    <img src="/static/images/logo.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vibhuti Singh</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="#" class="card-link">Card link</a>
+                                        <a href="#" class="card-link">Another link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+        </div>
     
     <div class="footer">
         <div class="row">
             <div class="col-md-12">
                 <a href="" data-toggle="modal" data-target="#exampleModal">
-                    <h3 class="text-center footer-text">© Team Ninja Hattori</h3>
+                    <h3 class="text-center footer-text" style="color: black;">© Team Ninja Hattori</h3>
                 </a>
             </div>
         </div>
-        
-
+    </div>
 
 
     <!-- Scripts And Other Parts Of Code-->

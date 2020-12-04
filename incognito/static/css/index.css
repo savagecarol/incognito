@@ -1,8 +1,14 @@
 html{
-    background-color: #2cb9c3; 
+    background-image: url('/static/images/background.jpg'); 
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;      
+    overflow-x: hidden; 
+    background-attachment: fixed; 
+}
+html * {
+    background-color: transparent;
 }
 .header{
-    background-color: #2cb9c3;
     height: 20vh;
     padding: 4vh;
 }
@@ -60,7 +66,7 @@ html{
 }
 
 .footer {
-    background-color: #2cb9c3;
+    /* /background-color: #2cb9c3; */
     height: 3vw;
 }
 
@@ -71,6 +77,7 @@ html{
 a, a:hover {
     text-decoration: none;
 }
+
 
 
 .main-head{

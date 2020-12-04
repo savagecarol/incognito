@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background-color: #2cb9c3">
+<html lang="en">
 
 <head>
     <title>Ninja Hattori</title>
@@ -30,110 +30,28 @@
                         <a href="">Preview</a></br>
                     </div>
                 </div>
-            </div>
-            <div class="col-4">
-                <!-- Empty Space-->
-            </div>
-            <div class="col-1 desktop">
+                <div class="col-4">
+                    <!-- Empty Space-->
+                </div>
+                <div class="col-2 desktop" >
 
-            </div>
-            <div class="col-4 quick-links">
-               
-                <ul class="">
-                    <ol>Home</ol>
-                    <ol>About</ol>
-                    <ol>Preview</ol>
-                </ul>
-               
-            </div>
-            <div class="col-1 menu" onclick="myFunction(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+                </div>
+                <div class="col-4 quick-links">
+                   
+                    <ul class="">
+                        <ol>Home</ol>
+                        <ol>About</ol>
+                        <ol>Preview</ol>
+                    </ul>
+                   
+                </div>
+                <div class="col-1 menu" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> 
             </div> 
-        </div> 
-        
-    </div>
-    
-    <div class="container-fluid m-4">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Ingonito text analyser</h2>
-                    </div>
-                </div>
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="textarea">Terms and Conditions</label>
-                        <textarea class="form-control" name="content" id="textarea" rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Analyze</button>
-                </form>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-
-    <!-- Team Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Team Ninja Hattori</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card" style="width: 14rem;">
-                                    <img src="/static/images/logo.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Alankar Saxena</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                    <div class="card-body">
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card" style="width: 14rem;">
-                                    <img src="/static/images/logo.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Kartikeya Sharma</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                    <div class="card-body">
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card" style="width: 14rem;">
-                                    <img src="/static/images/logo.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Vibhuti Singh</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                    <div class="card-body">
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer"></div>
-            </div>
+            
         </div>
 
 
@@ -154,9 +72,44 @@
         </div>
 
 
-        <input type="file" id="imageLoader" name="imageLoader"/>
-        <canvas id="imageCanvas"></canvas>
-    
+        <div class="main">
+            <div class="row">
+                <div class="col-6">
+                    <span id="main-head" class="main-head">
+                        Too Busy To Read </br> The Terms And Conditions...
+                    </span>
+                </div>
+                <div class="col-6">
+                    <span id="main-head" class="main-head">
+                        Let Icognito Do </br> The Hardwork...
+                    </span>
+                </div>
+            </div>    
+        </div>
+
+        <div class="container-fluid m-4">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Ingonito text analyser</h2>
+                        </div>
+                    </div>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="textarea">Terms and Conditions</label>
+                            <textarea class="form-control" name="content" id="textarea" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Analyze</button>
+                    </form>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+
+        
       <!-- Team Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">

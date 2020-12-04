@@ -68,6 +68,7 @@ html * {
 .footer {
     /*background-color: #2cb9c3;*/
     height: 3vw;
+    margin-bottom: -6vh;
 }
 
 .footer-text {

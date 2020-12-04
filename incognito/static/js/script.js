@@ -18,6 +18,5 @@ function myFunction(x) {
 
 
   function fade(element){
-        
+    console.log("fade")
   }
-console.log("hello")

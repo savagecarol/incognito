@@ -18,9 +18,11 @@
         <div class="header" id="header">
             <div class="row">
                 <div class="col-2">
-                    <img class="img-icon" src="/static/images/icon.png" alt="" style="">
-                    </br>
-                    <span class="app-name">Incognito</span>
+                    <div style="padding: 1vw;"> 
+                        <img class="img-icon" src="/static/images/icon.png" alt="" style="">
+                        </br>
+                        <span class="app-name">Incognito</span>
+                    </div>
                     <div class="quick-links-mobile" id="quick-links-mobile" style="display: none;">
                         <a href="">Home</a></br>
                         <a href="">About</a></br>
@@ -30,7 +32,7 @@
                 <div class="col-4">
                     <!-- Empty Space-->
                 </div>
-                <div class="col-1 desktop">
+                <div class="col-2 desktop" >
 
                 </div>
                 <div class="col-4 quick-links">
@@ -50,17 +52,79 @@
             </div> 
             
         </div>
+
+
+
     
-    <div class="container-fluid">
-
-        
-        <div class="footer">
-
+      <!-- Team Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Team Ninja Hattori</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row" id="card-conatainer">
+                            <div class="col-md-4" id="card">
+                                <div class="card" style="width: 14rem;">
+                                    <img src="/static/images/logo.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Alankar Saxena</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="#" class="card-link">Card link</a>
+                                        <a href="#" class="card-link">Another link</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4" id="card">
+                                <div class="card" style="width: 14rem;">
+                                    <img src="/static/images/logo.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Kartikeya Sharma</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="#" class="card-link">Card link</a>
+                                        <a href="#" class="card-link">Another link</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4" id="card">
+                                <div class="card" style="width: 14rem;">
+                                    <img src="/static/images/logo.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vibhuti Singh</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                    <div class="card-body">
+                                        <a href="#" class="card-link">Card link</a>
+                                        <a href="#" class="card-link">Another link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
         </div>
-
+        </div>
+    
+    <div class="footer">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="" data-toggle="modal" data-target="#exampleModal">
+                    <h3 class="text-center footer-text">© Team Ninja Hattori</h3>
+                </a>
+            </div>
+        </div>
     </div>
-
-
 
 
     <!-- Scripts And Other Parts Of Code-->

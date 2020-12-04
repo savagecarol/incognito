@@ -1,7 +1,13 @@
+.html{
+    background-color: #2cb9c3;
+}
 .header{
-    background-color: purple;
+    background-color: #2cb9c3;
     height: 20vh;
     padding: 4vh;
+}
+.quick-links{
+    padding: 1vw;
 }
 .quick-links ul{
     display: flex;
@@ -53,7 +59,18 @@
     transform: rotate(45deg) translate(-8px, -8px) ;
 }
 
+.footer {
+    background-color: #2cb9c3;
+    height: 3vw;
+}
 
+.footer-text {
+    color: white;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
 
 
 

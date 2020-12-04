@@ -1,12 +1,17 @@
 from django.shortcuts import render
-from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
+from nltk.tokenize import RegexpTokenizer
+
 
 def index(request):
     return render(request, 'index.html')
 
 
+tokenizer = RegexpTokenizer(r'\w+')
+ps = PorterStemmer()
+
+
 stopwords = ['to',
-             '.',
              'if',
              'which',
              'while',
@@ -187,22 +192,18 @@ stopwords = ['to',
              'when']
 
 
-def getDoc(document):
-    d = []
-    for doc in document:
-        d.append(formatting(doc))
-    return d
-
-
 def remove_stopwords(text, stopwords):
     useful = [w for w in text if w not in stopwords]
     return useful
 
 
 def formatting(document):
-    words = word_tokenize(document)
+    document = document.lower()
+    words = tokenizer.tokenize(document)
     useful_words = remove_stopwords(words, stopwords)
-    print(useful_words)
+    stemmed_words = [ps.stem(token) for token in useful_words]
+    clean_doc = ' '.join(stemmed_words)
+    print(clean_doc)
 
 
-formatting("hi my name is kartikeya. I am a good person")
+formatting("my name is kartikeya sharma . I am hero")

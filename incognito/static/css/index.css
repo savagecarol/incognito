@@ -1,0 +1,73 @@
+.header{
+    background-color: purple;
+    height: 20vh;
+    padding: 2vw;
+}
+.quick-links ul{
+    display: flex;
+    align-items: center;
+    margin-top: 2vh;
+}
+.quick-links ol{
+    margin-right: 0.5vw;
+    font-size: 3vh;
+}
+.img-icon{
+    width: 8vh;
+    height: 8vh;
+    margin-left: 4vh;
+}
+.app-name{
+    font-size: 4vh;
+}
+.quick-links-mobile{
+    display: none;
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+    
+    .quick-links ul{
+        display: none;
+    }
+    .quick-links-mobile a{
+       all: unset;
+       font-size: 3vh;
+       margin-left: 2vw;
+    }
+    .menu{
+        display: inline-block;
+    }
+  }

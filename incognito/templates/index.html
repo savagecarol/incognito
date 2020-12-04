@@ -2,97 +2,133 @@
 <html lang="en">
 
 <head>
+    <title>Ninja Hattori</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/index.css">
-    <title>Vibhuti On Fire</title>
     <script src="/static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-<div align='center' class="mainDiv">
-    <div id="demo"></div>
-    <h1 id='a'>Firebase Text Upload</h1>
-    <form action="" id="form">
-        <input id="content" name="content" type="text">
-        <br>
-        <br>
-        <input id="files" multiple name="files[]" type="file"/>
-        <br>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-    <textarea cols="30" id="convertedText" name="original" rows="10" style="width: 100%;">
-        </textarea>
-</div>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+        <div class="header" id="header">
+            <div class="row">
+                <div class="col-2">
+                    <img class="img-icon" src="/static/images/icon.png" alt="" style="">
+                    </br>
+                    <span class="app-name">Incognito</span>
+                    <div class="quick-links-mobile" id="quick-links-mobile" style="display: none;">
+                        <a href="">Home</a></br>
+                        <a href="">About</a></br>
+                        <a href="">Preview</a></br>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <!-- Empty Space-->
+                </div>
+                <div class="col-4 quick-links">
+                   
+                    <ul class="">
+                        <ol>Home</ol>
+                        <ol>About</ol>
+                        <ol>Preview</ol>
+                    </ul>
+                   
+                </div>
+                <div class="col-1 menu" onclick="myFunction(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div> 
+            </div> 
+            
+        </div>
+    
+    <div class="container-fluid">
+
+        
+        <div class="footer">
+
+        </div>
+
+    </div>
 
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-    https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
 
-<script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 
-<script>
-            // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyC5_n0KqAYIX9NP8wkwGfLpJBSoXsZkYY0",
-            authDomain: "ninja-hattori-ada11.firebaseapp.com",
-            databaseURL: "https://ninja-hattori-ada11.firebaseio.com",
-            projectId: "ninja-hattori-ada11",
-            storageBucket: "ninja-hattori-ada11.appspot.com",
-            messagingSenderId: "1001240733438",
-            appId: "1:1001240733438:web:1faf6dce683974870227af",
-            measurementId: "G-EDTK31Z0BV"
-        };
-        // Initialize Firebase
-        // firebase.initializeApp(firebaseConfig);
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+    <!-- Scripts And Other Parts Of Code-->
 
-        const db = firebase.firestore().collection('post')
-        const form = document.querySelector('#form');
-        const content = form.querySelector('#content');
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
-        var myFile = document.getElementById('files');
-        myFile.addEventListener('change', recognizeText);
 
-        async function recognizeText({ target: { files }  }) {
-            Tesseract.recognize(files[0]).then(function(result) {
-                console.log("recognizeText: result.text:", result.text);
-                document.getElementById("convertedText").value = result.text;
-            });
-        }
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
 
-        if (form) {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                var storageRef = firebase.storage().ref();
-                var file = document.getElementById("files").files[0];
-                var thisRef = storageRef.child(file.name);
+        <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
 
-                thisRef.put(file).then(function(snapshot) {
-                    alert("File Uploaded")
-                    console.log('Uploaded a blob or file!');
-                });
+        <script>
+                    // Your web app's Firebase configuration
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                var firebaseConfig = {
+                    apiKey: "AIzaSyC5_n0KqAYIX9NP8wkwGfLpJBSoXsZkYY0",
+                    authDomain: "ninja-hattori-ada11.firebaseapp.com",
+                    databaseURL: "https://ninja-hattori-ada11.firebaseio.com",
+                    projectId: "ninja-hattori-ada11",
+                    storageBucket: "ninja-hattori-ada11.appspot.com",
+                    messagingSenderId: "1001240733438",
+                    appId: "1:1001240733438:web:1faf6dce683974870227af",
+                    measurementId: "G-EDTK31Z0BV"
+                };
+                // Initialize Firebase
+                // firebase.initializeApp(firebaseConfig);
+                firebase.initializeApp(firebaseConfig);
+                firebase.analytics();
 
-                db.add({
-                    content: content.value
-                }).then((ref) => {
-                    console.log("data uploaded", ref.id)
-                })
+                const db = firebase.firestore().collection('post')
+                const form = document.querySelector('#form');
+                const content = form.querySelector('#content');
 
-                return alert('Data Successfully Sent to Realtime Database');
-            })
-        }
+                var myFile = document.getElementById('files');
+                myFile.addEventListener('change', recognizeText);
 
-</script>
+                async function recognizeText({ target: { files }  }) {
+                    Tesseract.recognize(files[0]).then(function(result) {
+                        console.log("recognizeText: result.text:", result.text);
+                        document.getElementById("convertedText").value = result.text;
+                    });
+                }
+
+                if (form) {
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        var storageRef = firebase.storage().ref();
+                        var file = document.getElementById("files").files[0];
+                        var thisRef = storageRef.child(file.name);
+
+                        thisRef.put(file).then(function(snapshot) {
+                            alert("File Uploaded")
+                            console.log('Uploaded a blob or file!');
+                        });
+
+                        db.add({
+                            content: content.value
+                        }).then((ref) => {
+                            console.log("data uploaded", ref.id)
+                        })
+
+                        return alert('Data Successfully Sent to Realtime Database');
+                    })
+                }
+
+        </script>
 </body>
 
 </html>

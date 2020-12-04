@@ -1,0 +1,26 @@
+.header {
+    background-color: purple;
+    height: 20vw;
+}
+
+.quick-links {
+    display: flex;
+    align-items: center;
+}
+
+.quick-links li{
+    margin-right: 20px;
+}
+
+.footer {
+    background-color: purple;
+    height: 3vw;
+}
+
+.footer-text {
+    color: white;
+}
+
+a, a:hover {
+    text-decoration: none;
+}

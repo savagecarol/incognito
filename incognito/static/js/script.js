@@ -1,3 +1,10 @@
+function startLoad(){
+    body = document.getElementsByTagName("body")[0]
+    console.log(body)
+}
+
+
+
 function myFunction(x) {
     x.classList.toggle("change");
     
@@ -77,17 +84,15 @@ function ImageReader(file){
 
     const reader = new FileReader()
     reader.readAsDataURL(file)
-    console.log(reader.result)
-    return reader.result
-
+    textExtracted = reader.result
 }
 
+var text = ""
+    
 function TextConvert(ImageData){
-    var text = ""
     Tesseract.recognize(reader.result).then(function (result){ 
     
         text = result.text
 
     })
-    return text
 }

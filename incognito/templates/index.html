@@ -32,9 +32,24 @@
             </div>  
         </div>
     
-    <div class="container-fluid">
-                <br><br>
-        
+    <div class="container-fluid m-4">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="row">
+                    <h2>Ingonito text analyser</h2>
+                </div>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="textarea">Terms and Conditions</label>
+                        <textarea class="form-control" name="content" id="textarea" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Analyze</button>
+                </form>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
     </div>
 
     <!-- Team Modal -->
